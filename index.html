@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Gesture Mouse</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MediaPipe Hands libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Gesture Mouse (Web Version)</h1>
+        <p>This is the web version. Move your hand to control the red dot. <strong>Pinch</strong> to click the buttons!</p>
+        
+        <div class="video-container">
+            <video class="input_video" style="display: none;"></video>
+            <canvas class="output_canvas" width="640" height="480"></canvas>
+            <div class="loading">Loading Camera...</div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="document.body.style.backgroundColor = '#ffcccc'">Make Background Red</button>
+            <button onclick="document.body.style.backgroundColor = '#ccffcc'">Make Background Green</button>
+            <button onclick="document.body.style.backgroundColor = '#ccccff'">Make Background Blue</button>
+        </div>
+
+        <!-- The Virtual Cursor -->
+        <div id="virtual-cursor"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
